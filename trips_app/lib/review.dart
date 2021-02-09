@@ -3,27 +3,47 @@ import 'package:flutter/material.dart';
 class Review extends StatelessWidget {
   String pathImage = "lib/assets/images/people.jpg";
   String name = "Varuna Yasas";
-  Review (this.pathImage, this.name);
+  String details = "1 review 5 photos";
+  String comment = "There is an amazing place in ";
+  Review(this.pathImage, this.name, this.details, this.comment);
   @override
   Widget build(BuildContext context) {
+    ////variable de los comentarios
+    final userComment = Container(
+      margin: EdgeInsets.only(left: 20.0),
+      child: Text(
+        details,
+        textAlign: TextAlign.left,
+        style: TextStyle(
+            fontFamily: "Lato", fontSize: 13.0, fontWeight: FontWeight.w900),
+      ),
+    );
 
+    //variable de la informacion del usuario
+
+    final userInfo = Container(
+      margin: EdgeInsets.only(left: 20.0),
+      child: Text(
+        details,
+        textAlign: TextAlign.left,
+        style: TextStyle(
+            fontFamily: "Lato", fontSize: 13.0, color: Color(0xFFa3a5a7)),
+      ),
+    );
 //variable del nombre del usuario
-final userName = Container(
-  margin: EdgeInsets.only(
-    left: 20.0
-  ),
-  child: Text(
-    name,
-  ),
-);
+    final userName = Container(
+      margin: EdgeInsets.only(left: 20.0),
+      child: Text(
+        name,
+        textAlign: TextAlign.left,
+        style: TextStyle(fontFamily: "Lato", fontSize: 17.0),
+      ),
+    );
 //variable de los detalles del usuario
-final userDetails = Column(
-  crossAxisAlignment: CrossAxisAlignment.start,
-children: [
-
-
-],
-);
+    final userDetails = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [userName, userInfo, userComment],
+    );
     //varible de la foto
     final photo = Container(
       margin: EdgeInsets.only(top: 20.0, left: 20.0),
@@ -31,13 +51,11 @@ children: [
       height: 80.0,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        image: DecorationImage(fit: BoxFit.cover, image: AssetImage(pathImage) ),
+        image: DecorationImage(fit: BoxFit.cover, image: AssetImage(pathImage)),
       ),
     );
     return Row(
-      children: [
-        photo,
-      ],
+      children: [photo, userDetails],
     );
   }
 }
