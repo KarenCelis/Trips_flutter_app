@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trips_app/description_place.dart';
 import 'package:trips_app/gradient_back.dart';
+import 'package:trips_app/header_appbar.dart';
 import 'package:trips_app/review_list.dart';
 
 void main() {
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         //appBar: AppBar(title: Text("Hola mundo")),
         //body: new DescriptionPlace("Bahamas", 4 , "lsssss"),
         //body: ReviewList(),
+        //es un stack porque son elementos sobrepuestos     
         body: Stack(children: [
           ListView(
             children: [
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
               ReviewList()
             ],
           ),
-          GradientBack()
+          HeaderAppBar()
         ],),
 
       ),
