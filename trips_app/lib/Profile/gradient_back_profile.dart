@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class GradientBack extends StatelessWidget {
+class GradientBackProfile extends StatelessWidget {
   String title ;
-  GradientBack(this.title);
+  GradientBackProfile(this.title);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250.0,
+      height: 350.0,
       decoration: BoxDecoration(
           gradient: LinearGradient(
               colors: [
